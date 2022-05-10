@@ -2,6 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import { useFetch } from '../../../hooks/useFetch'
 import Link from 'next/link'
+import { BoxContainer, BoxImage, H1, SpanLink } from './styled'
 
 
 export const TestMovie = () => {
@@ -12,22 +13,24 @@ export const TestMovie = () => {
     console.log(data);
     return (
         <>  
-            <h1 style={{ padding: '5px', textAlign:'center'}}> Movies </h1>
+            <H1> Movies </H1>
             <hr/>
             
-            <div style={{ padding: '30px', width:'70%',margin:'auto', display: 'flex', flexWrap: 'wrap', justifyContent:'space-between'}}>
+            <BoxContainer>
                 {data?.results.map(x => (
-                    <div style={{ padding: '25px', textAlign: 'center', maxWidth: '200px'}}>
-                        <div style={{ boxShadow: '0px 2px 7px #00000029'}}>
-                        <img style={{ width: '200px', height: '200px' }} src={`https://image.tmdb.org/t/p/w500/${x.poster_path}`} />
+                    <BoxImage key={x.id}>
+                        <div >
+                            <img style={{ width: '200px', height: '200px' }} src={`https://image.tmdb.org/t/p/w500/${x.poster_path}`} />
                         </div>
                         <h4>{x.title}</h4>
                         <div>
-                            <Link  href={`/detailsMovies?id=${x.id}`}> Detalles</Link>
+                            <Link  href={`/detailsMovies?id=${x.id}`}> 
+                                <SpanLink>Detalles</SpanLink>
+                            </Link>
                         </div>
-                    </div>
+                    </BoxImage>
                 ))}
-            </div>
+            </BoxContainer>
         </>
     )
 }
