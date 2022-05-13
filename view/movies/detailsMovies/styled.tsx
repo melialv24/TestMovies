@@ -1,17 +1,16 @@
 import styled, { css } from 'styled-components'
+import { TContainer } from './types'
 
 
-export const Container = styled.div`
-    background-color: antiquewhite;
+export const Container = styled.div<TContainer>`
     padding: 30px;
     display: flex;
+    height: 100%;
     position: relative;
     align-items: center;
+    background-image: linear-gradient(rgb(23, 23, 23), rgba(23, 23, 23, 0.5)), url( https://image.tmdb.org/t/p/w500/${({ image }) => image });
     justify-content: center;
     flex-flow: column nowrap;
-    @media only screen and (min-width: 992px) {
-        flex-flow: row nowrap;
-    }
 `
 export const BoxImage = styled.div`
     display: flex;
@@ -40,4 +39,8 @@ export const SpanSubtitle = styled.span`
 export const Li = styled.li`
     text-decoration: wavy;
     font-family: sans-serif;
+`
+export const ContainerColor = styled.div`
+    background: linear-gradient(rgba(23, 23, 23, 0) 0%, rgb(23, 23, 23) 100%), linear-gradient(270deg, rgb(83, 76, 218) 0%, rgb(222, 141, 152) 100%);
+    height: 80px;
 `

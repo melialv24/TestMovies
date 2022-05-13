@@ -1,4 +1,10 @@
 
+import CSS from 'csstype'
+
+export type TContainer = {
+    $image: string
+}
+
 export type TGenres = {
     id: number
     name: string

@@ -4,8 +4,8 @@ import { TestMovie } from '../view/movies/listMovies/components'
 
 export default function Home() {
   return (
-    <div>
-        <TestMovie/>
-    </div>
+      <div>
+          <TestMovie/>
+      </div>
   )
 }
