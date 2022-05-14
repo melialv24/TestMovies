@@ -1,11 +1,11 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { TestMovie } from '../view/movies/listMovies/components'
+import { ListMoviesC } from '../view/movies/listMovies/index'
 
 export default function Home() {
   return (
       <div>
-          <TestMovie/>
+          <ListMoviesC/>
       </div>
   )
 }

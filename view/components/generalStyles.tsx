@@ -89,3 +89,14 @@ export const Col = styled.div<TCol>`
         ${({ xl }) => xl === 'xl-12' && css`max-width: 100%; flex: 0 0 100%;`}
     }
 `
+export const Header = styled.header`
+    height: 50px;
+`
+export const BoxHeader = styled.div`
+    padding: 0px 25px;
+`
+export const TextH = styled.p`
+    color: #625bee; 
+    font-family: sans-serif; 
+    letter-spacing: .2px;
+`

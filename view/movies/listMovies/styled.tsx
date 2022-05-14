@@ -41,3 +41,13 @@ export const Container = styled.div`
     background: linear-gradient(rgba(23, 23, 23, 0) 0%, rgb(23, 23, 23) 100%), linear-gradient(270deg, rgb(83, 76, 218) 0%, rgb(222, 141, 152) 100%);
     height: 80px;
 `
+export const H4 = styled.h4`   
+    display: block; 
+    white-space: nowrap; 
+    text-overflow: ellipsis; 
+    overflow: hidden; 
+    color: white; 
+    font-family: sans-serif; 
+    letter-spacing: 1px;
+
+    `

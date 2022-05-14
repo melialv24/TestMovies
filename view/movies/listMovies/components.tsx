@@ -1,40 +1,17 @@
-import React from 'react'
-import { useFetch } from '../../../hooks/useFetch'
+import React, { FC } from 'react'
 import Link from 'next/link'
-import { BoxContainer, BoxImage, Container, H1, SpanLink } from './styled'
-import { MoviesService } from '../../../services/movies'
-import { gql, useQuery } from '@apollo/client'
+import { BoxContainer, BoxImage, Container, H1, H4, SpanLink } from './styled'
+import { TListMoviesV } from './types'
+import { HeaderC } from "../../components/header"
 
-const GET_MOVIES = gql`
-    query {
-        discoverMovies {
-        page
-        results {
-            poster_path
-            adult
-            overview
-            release_date
-            genre_ids
-            id
-            original_title
-            original_language
-            title
-            backdrop_path
-        }
-        }
+export const ListMoviesV: FC<TListMoviesV> = ({
+    data:{
+        data, 
+        loading
     }
-`
-
-export const TestMovie = () => {
-    const {data, error, loading} = useQuery(GET_MOVIES)
-    return (
+}) => (
         <div>  
-            <header style={{height: '50px'}}>
-                <div style={{ padding: '0px 25px'}}>
-                    <h3 style={{ color: '#625bee', fontFamily: 'sans-serif', letterSpacing: '.2px'  }}>TMDB</h3>
-                </div>
-            </header>
-            
+            <HeaderC/>
             <Container/>
             <BoxContainer>
                 {loading 
@@ -56,7 +33,9 @@ export const TestMovie = () => {
                                             src={`https://image.tmdb.org/t/p/w500/${x.poster_path}`} 
                                         />
                                     </div>
-                                    <h4 data-toggle="tooltip" style={{ display: 'block', whiteSpace: 'nowrap', textOverflow: 'ellipsis', overflow: 'hidden', color: 'white', fontFamily: 'sans-serif', letterSpacing: '1px'}}>{x.title}</h4>
+                                    <H4>
+                                        {x.title}
+                                    </H4>
                                     <div>
                                         <Link  
                                             href={`/detailsMovies?id=${x.id}`}
@@ -73,5 +52,4 @@ export const TestMovie = () => {
                 }
             </BoxContainer>
         </div>
-    )
-}
+)

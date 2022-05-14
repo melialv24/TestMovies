@@ -1,11 +1,12 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { DetailsMoviesV } from '../view/movies/detailsMovies/components'
+import { HeaderC } from '../view/components/header'
+import { DetailsMoviesC } from '../view/movies/detailsMovies/index'
 
 export default function Details() {
     return (
         <div>
-            <DetailsMoviesV/>
+            <DetailsMoviesC/>
         </div>
     )
 }

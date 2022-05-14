@@ -18,14 +18,24 @@ export type TProductionCompanies = {
 }
 
 export type TDataMovies = {
-    adult: boolean
-    backdrop_path: string
-    genres: TGenres[]
-    homepage: string
-    original_language: string
-    original_title: string
-    overview: string
-    poster_path: string
-    tagline: string
-    production_companies:[{}]
+    detailsMovies: {
+        adult: boolean
+        backdrop_path: string
+        genres: TGenres[]
+        homepage: string
+        original_language: string
+        original_title: string
+        overview: string
+        poster_path: string
+        tagline: string
+        production_companies:[{}]
+    }
+}
+
+
+export type TDetailsMoviesV = {
+    data: {
+        data: TDataMovies,
+        loading?: boolean
+    }
 }

@@ -18,25 +18,39 @@ export const BoxImage = styled.div`
     justify-content: center;
 `
 export const BoxText = styled.div`
+    background-color: #1F1E3170;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 20px;
     display: flex; 
     justify-content: flex-start; 
     flex-direction: column;
 `
 export const H1 = styled.h1`
+    color: white;
+    letter-spacing: 2px;
     text-align: center;
     font-family: sans-serif;
+    text-shadow: 5px 2px 2px black;
 `
 export const Text = styled.p`
+    color: white;
     text-align: justify;
     font-family: sans-serif;
     line-height: 1.5;
+    letter-spacing: 2px;
+    text-shadow: 5px 2px 2px black;
 `
 export const SpanSubtitle = styled.span`
+    color: white;
+    text-shadow: 5px 2px 2px black;
     font-weight: bold;
     font-family: sans-serif;
     font-size: larger;
 `
 export const Li = styled.li`
+    color: white;
+    text-shadow: 5px 2px 2px black;
     text-decoration: wavy;
     font-family: sans-serif;
 `
